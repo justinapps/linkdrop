@@ -16,7 +16,7 @@ class UserCreateForm(UserCreateForm):
         form = super(UserCreateForm, self).is_valid()
         for f, error in self.errors.item():
             if f != '__all__':
-                self.fields[f].widget.attrs.update({'class': 'error', 'value', strip_tags(error)})
+                self.fields[f].widget.attrs.update({'class': 'error', 'value': strip_tags(error)})
         return form
 
 
@@ -52,5 +52,5 @@ class AuthenticateForm(self):
         form = super(AuthenticateForm, self).is_valid()
         for f, error in self.errors.item():
             if f != '__all__':
-                self.fields[f].widget.attrs.update({'class', 'error', 'value': strip_tags(error)})
+                self.fields[f].widget.attrs.update({'class': 'error', 'value': strip_tags(error)})
         return form
